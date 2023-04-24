@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8001
 
 
 spring:
@@ -12,6 +12,6 @@ eureka:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${server.port}:${spring.application.instance_id:${random.value}}
   client:
     register-with-eureka: true
-    fetch-registry: true
+    fetch-registry: true #유레카 서버로부터 인스턴스들의 정보를 주기적으로 가져올것인가의 여부 갱신된 정보를 받을거면 true
     service-url:
-      defaultZone: http://localhost:8762/eureka
+      defaultZone: http://localhost:8762/eureka #유레카 서버 url
